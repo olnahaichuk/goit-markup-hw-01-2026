@@ -60,19 +60,24 @@ body {
 .page-nav {
   display: flex;
   justify-content: space-between;
+  width: 980px;
 }
 .menu {
   display: flex;
   column-gap: 24px;
 }
 .logo {
+  display: flex;
+  align-items: center;
   align-self: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.11;
   letter-spacing: -0.03em;
 }
-
+.logo-icon {
+  margin-left: 4px;
+}
 .text-italic {
   font-style: italic;
 }
@@ -85,25 +90,65 @@ body {
   line-height: 1.14;
   letter-spacing: -0.02em;
   color: #111111;
+  transition: color 250ms linear;
 }
-
+.menu-link.active{
+  position: relative;
+  color: #fd9222;
+}
+.menu-link.active:after{
+  content: '';
+  position: absolute;
+  height: 4px;
+  background-color: #fd9222;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
 .menu-link:hover,
 .menu-link:focus {
   color: #fd9222;
 }
+.page-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-list {
+  display: flex;
+  column-gap: 18px;
+}
+.social-list-link {
+  display: block;
+  stroke: #111111;
+  fill: none;
+  transition: stroke 250ms linear;
+}
 
+.social-list-link:hover,
+.social-list-link:focus {
+  stroke: #fd9222;
+}
 /* ===========/Page Header Styles=========== */
 
 /* ===========Hero Section Styles=========== */
 .hero {
-  padding-bottom: 36px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+ border-radius: 30px;
+  background-repeat: no-repeat;
+  background-color: #303030;
+  background-image:linear-gradient(rgba(17, 17, 17, 0.4),rgba(17, 17, 17, 0.4)), url("../images/hero/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .page-hero-container {
   padding-top: 381px;
   padding-bottom: 40px;
   padding-left: 56px;
   padding-right: 56px;
-  background-color: #111111;
 }
 
 .main-title {
@@ -123,8 +168,13 @@ body {
   background-color: #fd9222;
   border: none;
   margin-right: 14px;
+  transition: color 250ms linear, background-color 250ms linear;
 }
-
+.hero-buy-btn:hover,
+.hero-buy-btn:focus{
+  color: #fd9222;
+  background-color: #fcf1e0;;
+}
 .how-made-link {
   font-weight: 600;
   font-size: 14px;
@@ -133,21 +183,60 @@ body {
   border-radius: 100px;
   padding: 14px 40px;
   height: 45px;
-  margin-right: 585px;
+  margin-right: auto;
+  transition: color 250ms linear, border 250ms linear;
+}
+.how-made-link:hover,
+.how-made-link:focus{
+  border: 1px solid #fd9222;
+  color: #fd9222;
 }
 .scroll-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 14px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.03em;
   color: #ffffff;
+  transition: color 250ms linear;
 }
+.scroll-link:hover,
+.scroll-link:focus{
+  color: #fd9222;
+}
+.scroll-down-icon-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+height: 38px;
+border-radius: 50%;
+background-color: #ffffff;
+fill:#fd9222;
+transition: background-color 250ms linear, fill 250ms linear;
+}
+.scroll-link:hover .scroll-down-icon-wrapper
+{
+  background-color: #fd9222;
+  fill: #ffffff;
+  color: #fd9222;
+}
+
+.hero-bottom-block{
+  display: flex;
+  align-items: center;
+}
+
 
 /* ===========/Hero Section Styles=========== */
 
 /* ===========Benefits Section Styles=========== */
 
 .benefits-section {
+  margin-top: 72px;
   padding-top: 36px;
   padding-bottom: 36px;
   background-color: #1e1823;
@@ -170,6 +259,19 @@ body {
   font-size: 14px;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.7);
+}
+.benefits-item-icon-wrapper{
+  border: 1px solid rgba(255, 255, 255, 0.5);
+border-radius: 50%;
+width: 62px;
+height: 62px;
+margin-bottom: 22px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.benefits-item-icon{
+fill:#fd9222
 }
 /* ===========/Benefits Section Styles=========== */
 
@@ -208,6 +310,8 @@ body {
   gap: 19px;
 }
 .ingredients-list-item {
+  position: relative;
+  overflow: hidden;
   border: 1px solid #fd9222;
   border-radius: 15px;
   padding: 32px 28px;
@@ -231,6 +335,60 @@ body {
 }
 .ingredients-list-item:nth-child(odd) {
   color: #ffffff;
+}
+.ingredient-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+  overflow: auto;
+  background-color: #ffffff;
+  color: #111111;
+  padding: 20px;
+  border-radius: 15px;
+  
+}
+.ingredient-overlay-title{
+font-weight: 600;
+font-size: 18px;
+letter-spacing: -0.03em;
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+.ingredient-overlay-categories{
+  display: flex;
+  column-gap: 6px;
+  margin-bottom: 14px;
+}
+.ingredient-overlay-item{
+  background-color: #fd9222;
+  border-radius: 35px;
+padding: 6px 16px;
+font-weight: 400;
+font-size: 10px;
+line-height: 1.2;
+}
+.ingredient-overlay-item:first-child{
+  color: #fff;
+  background-color: #fd9222;
+}
+.ingredient-overlay-item:last-child{
+  color: #111111;
+  background-color: transparent;
+  border: 1px solid #fd9222;
+}
+.ingredient-overlay-text{
+font-size: 14px;
+line-height: 1.28571;
+letter-spacing: -0.02em;
+color: #111;
+}
+.ingredients-list-item:hover .ingredient-overlay
+{
+  transform: translateY(0);
 }
 /* ===========/Ingredients Section Styles=========== */
 
@@ -262,16 +420,29 @@ body {
   margin-bottom: 28px;
 }
 .how-made-list-item {
+  position: relative;
+  padding-left: 16px;
   margin-bottom: 24px;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.02em;
   color: #111;
 }
-.how-made-list-item:last-child{
+.how-made-list-item:last-child {
   margin-bottom: 0;
 }
 
+.how-made-list-item::before{
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+background-color: #4c4c4c;
+border: 1px solid #eceded;
+}
 /* ===========/How made Section Styles=========== */
 
 /* ===========Reviews Section Styles=========== */
@@ -287,9 +458,20 @@ body {
   margin-bottom: 49px;
 }
 .reviews-list-item {
+  position: relative;
   flex-basis: calc((100% - 56px) / 3);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+border-radius: 15px;
+background: #ffffff;
+box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
+padding: 56px 24px 24px;
+
 }
-.reviews-list-item-avatar{
+.reviews-list-item-avatar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+transform: translate(-50%,-50%);
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 18px;
@@ -321,6 +503,12 @@ body {
   padding: 14px 40px;
   height: 50px;
   background-color: transparent;
+  transition: color 250ms linear, background-color 250ms linear;
+}
+.leave-review-btn:hover,
+.leave-review-btn:focus{
+  color: #ffffff;
+  background-color:  #fd9222;;
 }
 /* ===========/Reviews Section Styles=========== */
 
@@ -329,7 +517,7 @@ body {
   padding-top: 50px;
   background-color: #1e1823;
 }
-.footer-wrapper{
+.footer-wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -351,7 +539,7 @@ body {
   color: #ffffff;
   margin-bottom: 14px;
 }
-.contact-list-item{
+.contact-list-item {
   margin-bottom: 4px;
 }
 .contact-list-link {
@@ -360,16 +548,17 @@ body {
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
+  transition: color 250ms linear;
 }
 .contact-list-link:hover,
 .contact-list-link:focus {
   color: #fd9222;
 }
-.page-footer .menu-link{
+.page-footer .menu-link {
   color: #ffffff;
 }
 .menu-link:hover,
-.menu-link:focus{
+.menu-link:focus {
   color: #fd9222;
 }
 /* ===========/Footer Section Styles=========== */
