@@ -85,15 +85,19 @@
           <div class="hero-bottom-block">
             <button type="button" class="hero-buy-btn">Buy now</button>
             <a href="#how-made" class="how-made-link">How it’s made</a>
-            <a href="#benefits" class="scroll-link">scroll down 
+            <a href="#benefits" class="scroll-link"
+              >scroll down
               <span class="scroll-down-icon-wrapper">
-              <svg class="scroll-icon" width="22" height="22"
-              aria-label="scroll down link">
-                <use href="./images/icons/sprite.svg#icon-scroll"></use>
-              </svg>
-            </span>
+                <svg
+                  class="scroll-icon"
+                  width="22"
+                  height="22"
+                  aria-label="scroll down link"
+                >
+                  <use href="./images/icons/sprite.svg#icon-scroll"></use>
+                </svg>
+              </span>
             </a>
-            
           </div>
         </div>
       </section>
@@ -412,6 +416,125 @@
         </nav>
       </div>
     </footer>
-    <!-- ======= Footer Section ======= -->
+      <!-- ======= Footer Section ======= -->
+
+    <!--  ======== Backdrop ========   -->
+    <div class="backdrop is-open">
+      <div class="modal">
+        <button type="button" class="modal-close-btn">
+          <svg
+            class="modal-close-btn-icon"
+            width="28"
+            height="28"
+            aria-label="close icon"
+          >
+            <use href="./images/icons/sprite.svg#icon-x-close"></use>
+          </svg>
+        </button>
+        <p class="review-form-description">
+          leave a review about <span class="accent-color">our chocolate </span>
+        </p>
+        <form class="review-form">
+          <div class="review-form-field-wrapper">
+            <label for="user-name" class="review-form-field-label">Name</label
+            >
+            <div class="review-form-input-wrapper"><input
+              name="user-name"
+              id="user-name"
+              type="text"
+              class="review-form-field-input"
+              pattern="[a-zA-Zа-яА-ЯіІїЇєЄґҐ']+"
+              title="Oleksii"
+              required
+            />
+          <svg class="review-form-input-icon"
+          width="24"
+          height="24"
+          aria-label="user icon" >
+            <use href="./images/icons/sprite.svg#icon-user"></use>
+          </svg>
+          </div>
+            
+          </div>
+          <div class="review-form-field-wrapper">
+            <label for="user-email" class="review-form-field-label">Email</label
+            >
+            <div class="review-form-input-wrapper">
+              <input
+              type="email"
+              name="user-email"
+              id="user-email"
+              class="review-form-field-input"
+            />
+            <svg class="review-form-input-icon"
+            width="24"
+            height="24"
+            aria-label="email icon" >
+              <use href="./images/icons/sprite.svg#icon-mail" ></use>
+            </svg>
+            </div>
+            
+          </div>
+          <div class="review-form-field-wrapper">
+            <label for="user-phone" class="review-form-field-label"
+              >Phone number</label
+            >
+            <div class="review-form-input-wrapper">
+              <input
+              type="tel"
+              class="review-form-field-input"
+              name="user-phone"
+              id="user-phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+              title="xxx-xxx-xx-xx"
+              required
+            />
+            <svg class="review-form-input-icon"
+           width="24"
+           height="24"
+           aria-label="phone icon" >
+              <use href="./images/icons/sprite.svg#icon-phone" ></use>
+            </svg>
+            </div>
+            
+          </div>
+          <div class="review-form-field-wrapper">
+            <label for="user-comment" class="review-form-field-label"
+              >Comment</label
+            ><textarea
+              name="user-comment"
+              id="user-comment"
+              class="review-form-message"
+              placeholder="Enter text"
+            ></textarea>
+          </div>
+          <div class="review-form-checkbox-wrapper">
+            <input type="checkbox" class="review-form-privacy-checkbox visually-hidden" 
+            name="privacy-policy"
+            value="true"
+            id="privacy-policy"
+            required/>
+            <label 
+            for="privacy-policy"
+            class="review-form-checkbox-label">
+            <span class="review-form-own-checkbox"
+          >
+          <svg class="review-form-own-checkbox-icon"
+          width="10"
+          height="10"
+          >
+          <use href="./images/icons/sprite.svg#icon-checkmark"
+          ></use>
+        </svg>
+      </span>
+              I accept the terms and conditions of the
+              <a href="" class="privacy-policy-link" >Privacy Policy </a></label
+            >
+          </div>
+          <button type="submit " class="review-form-submit-btn">Send</button>
+        </form>
+      </div>
+    </div>
+      <!--  ======== Backdrop ========   -->
   </body>
 </html>
